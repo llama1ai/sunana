@@ -9,6 +9,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
+import { NEXT_PUBLIC_TOLT_REFERRAL_ID } from '@/env';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -123,7 +124,7 @@ export default function RootLayout({
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-PCHSN4M2');`}
         </Script>
-        <Script async src="https://cdn.tolt.io/tolt.js" data-tolt={process.env.NEXT_PUBLIC_TOLT_REFERRAL_ID}></Script>
+        <Script async src="https://cdn.tolt.io/tolt.js" data-tolt={NEXT_PUBLIC_TOLT_REFERRAL_ID}></Script>
       </head>
 
       <body

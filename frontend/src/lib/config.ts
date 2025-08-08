@@ -1,3 +1,5 @@
+import { NEXT_PUBLIC_ENV_MODE, NODE_ENV } from '@/env';
+
 // Environment mode types
 export enum EnvMode {
   LOCAL = 'local',
@@ -201,7 +203,7 @@ const STAGING_TIERS: SubscriptionTiers = {
 // Determine the environment mode from environment variables
 const getEnvironmentMode = (): EnvMode => {
   // Get the environment mode from the environment variable, if set
-  const envMode = process.env.NEXT_PUBLIC_ENV_MODE?.toLowerCase();
+  const envMode = NEXT_PUBLIC_ENV_MODE.toLowerCase();
 
   // First check if the environment variable is explicitly set
   if (envMode) {
@@ -218,7 +220,7 @@ const getEnvironmentMode = (): EnvMode => {
   }
 
   // If no valid environment mode is set, fall back to defaults based on NODE_ENV
-  if (process.env.NODE_ENV === 'development') {
+  if (NODE_ENV === 'development') {
     console.log('Defaulting to LOCAL environment mode in development');
     return EnvMode.LOCAL;
   } else {

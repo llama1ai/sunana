@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { ORSHOT_API_KEY } from '@/env';
 
 // Add route segment config for caching
 export const runtime = 'edge'; // Use edge runtime for better performance
@@ -18,7 +19,7 @@ export async function GET(request) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.ORSHOT_API_KEY}`,
+        Authorization: `Bearer ${ORSHOT_API_KEY}`,
       },
       body: JSON.stringify({
         templateId: 10,

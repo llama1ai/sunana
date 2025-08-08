@@ -5,8 +5,9 @@ import AccountBillingStatus from '@/components/billing/account-billing-status';
 import { useAccounts } from '@/hooks/use-accounts';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
+import { NEXT_PUBLIC_URL } from '@/env';
 
-const returnUrl = process.env.NEXT_PUBLIC_URL as string;
+const returnUrl = NEXT_PUBLIC_URL;
 
 export default function PersonalAccountBillingPage() {
   const { data: accounts, isLoading, error } = useAccounts();

@@ -1,5 +1,6 @@
 import { headers } from 'next/headers';
 import { ImageResponse } from 'next/og';
+import { NODE_ENV } from '@/env';
 
 // Configuration exports
 export const runtime = 'edge';
@@ -15,7 +16,7 @@ export default async function Image() {
     // Get the host from headers
     const headersList = await headers();
     const host = headersList.get('host') || '';
-    const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https';
+    const protocol = NODE_ENV === 'development' ? 'http' : 'https';
     const baseUrl = `${protocol}://${host}`;
 
     return new ImageResponse(
