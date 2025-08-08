@@ -1,9 +1,11 @@
 "use server";
 
+import { KORTIX_ADMIN_API_KEY } from '@/env';
+
 async function installSunaForNewUser(userId: string) {
   try {
     const backendUrl = 'http://localhost:8000';
-    const adminApiKey = process.env.KORTIX_ADMIN_API_KEY;
+    const adminApiKey = KORTIX_ADMIN_API_KEY;
     
     if (!adminApiKey) {
       console.error('KORTIX_ADMIN_API_KEY not configured - cannot install Suna agent');

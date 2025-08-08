@@ -1,4 +1,5 @@
 'use server';
+import { OPENAI_API_KEY } from '@/env';
 
 export const generateThreadName = async (message: string): Promise<string> => {
   try {
@@ -9,7 +10,7 @@ export const generateThreadName = async (message: string): Promise<string> => {
         : message.trim();
 
     // OpenAI API key should be stored in an environment variable
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey = OPENAI_API_KEY;
 
     if (!apiKey) {
       console.error('OpenAI API key not found');

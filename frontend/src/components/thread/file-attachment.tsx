@@ -12,6 +12,7 @@ import { CsvRenderer } from './preview-renderers/csv-renderer';
 import { useFileContent, useImageContent } from '@/hooks/react-query/files';
 import { useAuth } from '@/components/AuthProvider';
 import { Project } from '@/lib/api';
+import { NODE_ENV } from '@/env';
 
 // Define basic file types
 export type FileType =
@@ -329,7 +330,7 @@ export function FileAttachment({
                         console.error('Image load error for:', filename);
 
                         // Only log details in dev environments to avoid console spam
-                        if (process.env.NODE_ENV === 'development') {
+                        if (NODE_ENV === 'development') {
                             const imgSrc = sandboxId && session?.access_token ? imageUrl : fileUrl;
                             console.error('Image URL:', imgSrc);
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { NODE_ENV } from '@/env';
 import {
   HydrationBoundary,
   QueryClient,
@@ -52,7 +53,7 @@ export function ReactQueryProvider({
     <QueryClientProvider client={queryClient}>
       <HydrationBoundary state={dehydratedState}>
         {children}
-        {/* {process.env.NODE_ENV !== 'production' && (
+        {/* {NODE_ENV !== 'production' && (
           <ReactQueryDevtools initialIsOpen={false} />
         )} */}
       </HydrationBoundary>

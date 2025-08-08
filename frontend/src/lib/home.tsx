@@ -7,6 +7,7 @@ import { Globe } from '@/components/home/ui/globe';
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
 import { config } from '@/lib/config';
+import { NEXT_PUBLIC_APP_URL } from '@/env';
 
 export const Highlight = ({
   children,
@@ -61,7 +62,7 @@ export const siteConfig = {
   name: 'Kortix Suna',
   description: 'The Generalist AI Agent that can act on your behalf.',
   cta: 'Start Free',
-  url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+  url: NEXT_PUBLIC_APP_URL,
   keywords: ['AI Agent', 'Generalist AI', 'Open Source AI', 'Autonomous Agent'],
   links: {
     email: 'support@kortix.ai',

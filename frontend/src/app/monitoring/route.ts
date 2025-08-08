@@ -1,12 +1,14 @@
+import { NEXT_PUBLIC_SENTRY_DSN } from '@/env';
+
 const SENTRY_URL = new URL(
-  process.env.NEXT_PUBLIC_SENTRY_DSN ?? 'https://example.com/abc',
+  NEXT_PUBLIC_SENTRY_DSN ?? 'https://example.com/abc',
 );
 const SENTRY_HOST = SENTRY_URL.hostname;
 const SENTRY_PROJECT_ID = SENTRY_URL.pathname.split('/').pop();
 
 export const POST = async (req: Request) => {
   try {
-    if (!process.env.NEXT_PUBLIC_SENTRY_DSN) {
+    if (!NEXT_PUBLIC_SENTRY_DSN) {
       return Response.json(
         { error: 'Sentry is not configured' },
         { status: 500 },

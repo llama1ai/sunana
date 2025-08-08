@@ -1,3 +1,5 @@
+import { NEXT_PUBLIC_URL } from '@/env';
+
 export default function fullInvitationUrl(token: string) {
-  return `${process.env.NEXT_PUBLIC_URL}/invitation?token=${token}`;
+  return `${NEXT_PUBLIC_URL}/invitation?token=${token}`;
 }

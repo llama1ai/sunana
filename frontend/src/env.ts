@@ -1,0 +1,14 @@
+export const NODE_ENV = 'development';
+export const NEXT_PUBLIC_SUPABASE_URL = 'https://your-project.supabase.co';
+export const NEXT_PUBLIC_SUPABASE_ANON_KEY = 'your-anon-key';
+export const NEXT_PUBLIC_URL = 'http://localhost:3000';
+export const NEXT_PUBLIC_ENV_MODE = 'LOCAL';
+export const NEXT_PUBLIC_TOLT_REFERRAL_ID = 'HARDCODED_TOLT_REFERRAL_ID';
+export const NEXT_PUBLIC_SENTRY_DSN = 'https://example.com/abc';
+export const ORSHOT_API_KEY = 'HARDCODED_ORSHOT_API_KEY';
+export const KORTIX_ADMIN_API_KEY = 'HARDCODED_KORTIX_ADMIN_API_KEY';
+export const NEXT_PUBLIC_PHONE_NUMBER_MANDATORY = 'false';
+export const EDGE_CONFIG = 'HARDCODED_EDGE_CONFIG';
+export const OPENAI_API_KEY = 'HARDCODED_OPENAI_API_KEY';
+export const NEXT_OUTPUT: 'standalone' | undefined = 'standalone';
+export const NEXT_PUBLIC_APP_URL = 'http://localhost:3000';

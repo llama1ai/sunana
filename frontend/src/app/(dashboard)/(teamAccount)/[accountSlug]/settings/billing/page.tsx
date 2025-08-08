@@ -5,8 +5,9 @@ import AccountBillingStatus from '@/components/billing/account-billing-status';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useAccountBySlug } from '@/hooks/react-query';
+import { NEXT_PUBLIC_URL } from '@/env';
 
-const returnUrl = process.env.NEXT_PUBLIC_URL as string;
+const returnUrl = NEXT_PUBLIC_URL;
 
 type AccountParams = {
   accountSlug: string;

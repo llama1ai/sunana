@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { NEXT_PUBLIC_URL } from "@/env"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
@@ -83,7 +84,7 @@ export function ShareModal({ isOpen, onClose, threadId, projectId }: ShareModalP
 
   const generateShareLink = () => {
     if (!threadId) return ""
-    return `${process.env.NEXT_PUBLIC_URL || window.location.origin}/share/${threadId}`
+    return `${NEXT_PUBLIC_URL || window.location.origin}/share/${threadId}`
   }
 
   const createShareLink = async () => {

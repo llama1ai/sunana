@@ -1,5 +1,6 @@
 import { flag } from 'flags/next';
 import { getAll } from '@vercel/edge-config';
+import { EDGE_CONFIG } from '@/env';
 
 export type IMaintenanceNotice =
   | {
@@ -17,7 +18,7 @@ export const maintenanceNoticeFlag = flag({
   key: 'maintenance-notice',
   async decide() {
     try {
-      if (!process.env.EDGE_CONFIG) {
+      if (!EDGE_CONFIG) {
         console.warn('Edge config is not set');
         return { enabled: false } as const;
       }
